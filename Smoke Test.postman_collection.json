@@ -1,0 +1,2445 @@
+{
+	"info": {
+		"_postman_id": "e909a6a2-0b8f-40c0-b8e6-ae9ec7ea53c8",
+		"name": "Smoke Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13644036"
+	},
+	"item": [
+		{
+			"name": "Monitoring",
+			"item": [
+				{
+					"name": "api/v1/status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/status?statusTypeCode=PROCESS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"status"
+							],
+							"query": [
+								{
+									"key": "statusTypeCode",
+									"value": "PROCESS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/dataTypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/dataTypes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dataTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v2/process-executions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/process-executions?type=EXECUTABLE&type=DAEMON&type=SUBSCRIPTION&sortBy=processRunKey-desc&perPage=50&page=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"process-executions"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "EXECUTABLE"
+								},
+								{
+									"key": "type",
+									"value": "DAEMON"
+								},
+								{
+									"key": "type",
+									"value": "SUBSCRIPTION"
+								},
+								{
+									"key": "sortBy",
+									"value": "processRunKey-desc"
+								},
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{dynamic_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Download Processing",
+			"item": [
+				{
+					"name": "api/v1/status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/status?statusTypeCode=PROCESS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"status"
+							],
+							"query": [
+								{
+									"key": "statusTypeCode",
+									"value": "PROCESS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/dataTypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/dataTypes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dataTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v2/process-executions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/process-executions?type=EXECUTABLE&type=DAEMON&type=SUBSCRIPTION&sortBy=processRunKey-desc&perPage=50&page=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"process-executions"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "EXECUTABLE"
+								},
+								{
+									"key": "type",
+									"value": "DAEMON"
+								},
+								{
+									"key": "type",
+									"value": "SUBSCRIPTION"
+								},
+								{
+									"key": "sortBy",
+									"value": "processRunKey-desc"
+								},
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{dynamic_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Create Graph",
+			"item": [
+				{
+					"name": "api/v1/repo/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200 or 201\", function () {\r",
+									"    pm.response.to.have.status.oneOf([200, 201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph?perPage=50&page=0&area=test&project=new_MT&workspace=new_feature",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new_MT"
+								},
+								{
+									"key": "workspace",
+									"value": "new_feature"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v2/applications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/applications?applicationType=APPLICATION&roles=Admin&subjectArea=test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "applicationType",
+									"value": "APPLICATION"
+								},
+								{
+									"key": "roles",
+									"value": "Admin"
+								},
+								{
+									"key": "subjectArea",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"applicationName\": \"TEST\",\r\n    \"jsonSpecification\": null,\r\n    \"nodes\": [],\r\n    \"graphName\": \"tet\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/graph/definition",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph/definition/TESTAPI2?area=test&project=manual_tests&workspace=empty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph",
+								"definition",
+								"TESTAPI2"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "manual_tests"
+								},
+								{
+									"key": "workspace",
+									"value": "empty"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/operations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/operations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"operations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{dynamic_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Save Graph",
+			"item": [
+				{
+					"name": "api/v1/repo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph?perPage=50&area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"area\": \"test\",\r\n  \"graph\": {\r\n    \"applicationName\": \"TEST\",\r\n    \"jsonSpecification\": \"null\",\r\n    \"nodes\": []\r\n  },\r\n  \"project\": \"new\",\r\n  \"workspace\": \"POS_Graph\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph/tet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph",
+								"tet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Graph",
+			"item": [
+				{
+					"name": "api/v1/repo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph?perPage=50&area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph/tet?graphName =tet&area =test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph",
+								"tet"
+							],
+							"query": [
+								{
+									"key": "graphName ",
+									"value": "tet"
+								},
+								{
+									"key": "area ",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clone Graph",
+			"item": [
+				{
+					"name": "api/v1/repo/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph?perPage=50&area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/graph/clone",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"area\": \"test\",\r\n  \"newGraphName\": \"tet2\",\r\n  \"project\": \"new\",\r\n  \"sourceGraphName\": \"tet\",\r\n  \"workspace\": \"POS_Graph\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph/clone",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph",
+								"clone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Onboarding",
+			"item": [
+				{
+					"name": "api/v1/repo/executable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/executable?sortBy=createdDatetime-desc&perPage=50&page=0&area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"executable"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "createdDatetime-desc"
+								},
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v2/applications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/applications?applicationType=APPLICATION&roles=Admin&subjectArea=test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "applicationType",
+									"value": "APPLICATION"
+								},
+								{
+									"key": "roles",
+									"value": "Admin"
+								},
+								{
+									"key": "subjectArea",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph?perPage=2000&page=0&area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "2000"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/executable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"graphName\": \"tet\",\r\n    \"applicationName\": \"TEST\",\r\n    \"jsonSpecification\": null,\r\n    \"processDescription\": null,\r\n    \"schedules\": null,\r\n    \"processParameters\": null,\r\n    \"nodes\": null,\r\n    \"objects\": null,\r\n    \"metrics\": null,\r\n    \"notifications\": null,\r\n    \"upstreams\": null,\r\n    \"processName\": \"test2\",\r\n    \"area\": \"test\",\r\n    \"workspace\": \"POS_Graph\",\r\n    \"project\": \"new\",\r\n    \"process\": {\r\n        \"applicationName\": \"TEST\",\r\n        \"graphName\": \"tet\",\r\n        \"processName\": \"test2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/executable",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"executable"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Save Onboarding",
+			"item": [
+				{
+					"name": "api/v1/repo/executable/test2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"graphName\": \"tet\",\r\n    \"applicationName\": \"TEST\",\r\n    \"jsonSpecification\": null,\r\n    \"processDescription\": null,\r\n    \"schedules\": null,\r\n    \"processParameters\": [],\r\n    \"nodes\": [],\r\n    \"objects\": null,\r\n    \"metrics\": [],\r\n    \"notifications\": null,\r\n    \"upstreams\": null,\r\n    \"processName\": \"test2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/executable/test2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"executable",
+								"test2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/graph/definition",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph/definition/tet?area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph",
+								"definition",
+								"tet"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Onboarding",
+			"item": [
+				{
+					"name": "api/v1/repo/executable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/executable/test2?area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"executable",
+								"test2"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/executable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/executable?sortBy=createdDatetime-desc&perPage=50&page=0&area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"executable"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "createdDatetime-desc"
+								},
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule Process",
+			"item": [
+				{
+					"name": "api/v1/process",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/process?processName=test&type=EXECUTABLE&isActive=true&perPage=50\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"process"
+							],
+							"query": [
+								{
+									"key": "processName",
+									"value": "test"
+								},
+								{
+									"key": "type",
+									"value": "EXECUTABLE"
+								},
+								{
+									"key": "isActive",
+									"value": "true"
+								},
+								{
+									"key": "perPage",
+									"value": "50\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/executable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/executable/test?area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"executable",
+								"test"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/processExecutions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processRunKey\": 24181761,\r\n    \"processRunGuid\": \"69bc60a3-8b05-4164-8e15-e7df3bdd6583\",\r\n    \"rootProcessRunKey\": 24181761,\r\n    \"parentProcessRunKey\": null,\r\n    \"processKey\": 158300,\r\n    \"processStatusTypeKey\": 13,\r\n    \"scheduleStatusTypeKey\": 0,\r\n    \"scheduleDatetime\": \"2023-02-27T00:04:00\",\r\n    \"startDatetime\": null,\r\n    \"endDatetime\": null,\r\n    \"lastUpdateDatetime\": \"2023-02-26T23:06:56.7919069\",\r\n    \"processTypeKey\": 4,\r\n    \"applicationKey\": 21,\r\n    \"priorityNum\": null,\r\n    \"slaStatusTypeKey\": 301,\r\n    \"expectedEndDatetime\": null,\r\n    \"criticalEndDatetime\": null,\r\n    \"durationSec\": null,\r\n    \"processStatusName\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/processExecutions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"processExecutions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/runParameters/24181761/initialize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"processRunParameterKey\": 43688484,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"NEW_CLUSTER_CONFIG\",\r\n        \"processRunParameterValue\": \"{ \\\"autoscale\\\": {\\\"min_workers\\\": \\\"1\\\", \\\"max_workers\\\": \\\"5\\\"}, \\\"instance_pool_id\\\": \\\"0310-151947-taffy17-pool-a5ujhJLR\\\", \\\"spark_version\\\": \\\"6.4.x-scala2.11\\\", \\\"spark_conf\\\": { \\\"spark.history.fs.logDirectory\\\": \\\"dbfs:/history_log/\\\", \\\"spark.eventLog.enabled\\\": \\\"true\\\", \\\"spark.extraListeners\\\": \\\"com.pg.app.TurbineSparkListener\\\", \\\"spark.databricks.delta.preview.enabled\\\": \\\"true\\\", \\\"spark.eventLog.dir\\\": \\\"dbfs:/event_log/\\\" }, \\\"cluster_log_conf\\\": { \\\"dbfs\\\": { \\\"destination\\\": \\\"dbfs:/mnt/databricks-logs\\\" } }, \\\"spark_env_vars\\\": { \\\"PYSPARK_PYTHON\\\": \\\"/databricks/python3/bin/python3\\\" }, \\\"init_scripts\\\": [ { \\\"dbfs\\\": { \\\"destination\\\": \\\"dbfs:/init/listener_test.sh\\\" } }, { \\\"dbfs\\\": { \\\"destination\\\": \\\"dbfs:/init/remove_pyopenssl_and_crypto.sh\\\" } }, { \\\"dbfs\\\": { \\\"destination\\\": \\\"dbfs:/init/only_turbine_whl.sh\\\" } } ] }\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688422,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"RLS_API_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"rls-code-api-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688377,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"PROCESS_ATTRIBUTE\",\r\n        \"processRunParameterName\": \"EXPECTED_DATA_LAG\",\r\n        \"processRunParameterValue\": \"1D\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688378,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"PROCESS_ATTRIBUTE\",\r\n        \"processRunParameterName\": \"WORK1\",\r\n        \"processRunParameterValue\": \"IT Specialist\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688379,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"PROCESS_ATTRIBUTE\",\r\n        \"processRunParameterName\": \"WORK2\",\r\n        \"processRunParameterValue\": \"IT Engineer\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688380,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"PROCESS_ATTRIBUTE\",\r\n        \"processRunParameterName\": \"RUN_ON_CLUSTER_POOL\",\r\n        \"processRunParameterValue\": \"0\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688381,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"PROCESS_ATTRIBUTE\",\r\n        \"processRunParameterName\": \"RUN_ON_INTERACTIVE_CLUSTER\",\r\n        \"processRunParameterValue\": \"1\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688382,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"PROCESS_ATTRIBUTE\",\r\n        \"processRunParameterName\": \"DATABRICKS_CLUSTER_INFRA_NAME\",\r\n        \"processRunParameterValue\": \"working_Standard_DS3_v2_14GB_4Cores_runtime_6_4\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688384,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SOURCE_STORAGE_NAME\",\r\n        \"processRunParameterValue\": \"\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688385,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_CLIENT_SECRET\",\r\n        \"processRunParameterValue\": \"ds-client-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688386,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SUBJECT_AREA\",\r\n        \"processRunParameterValue\": \"TEST\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688387,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATABASE_SPARK_PATH\",\r\n        \"processRunParameterValue\": \"dbfs:/mnt/adls/Spark/data/temp/spark_database/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688388,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_V2_API_URI\",\r\n        \"processRunParameterValue\": \"/ct/api/v1/processControlTotals/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688389,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"OPERATION_CLIENT_SECRET\",\r\n        \"processRunParameterValue\": \"service-principal-secret\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688390,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"MDM_PUSH_CONFIGURATION_ID\",\r\n        \"processRunParameterValue\": \"mdm_integration_lib_turbine_test\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688391,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_DQE_V2_RESOURCE_ID\",\r\n        \"processRunParameterValue\": \"ca272605-0cc2-498e-9bdf-d36af2fc06a8\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688392,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKIDV2_BROADCAST_ROW_LIMIT\",\r\n        \"processRunParameterValue\": \"50000\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688393,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TODEL_SOURCE_FILE_WORK_PATH\",\r\n        \"processRunParameterValue\": \"1\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688394,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_DQE_V2_API_SERVER\",\r\n        \"processRunParameterValue\": \"dqeapi-n301.pg.com\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688395,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"RLS_CODE_API_SERVER\",\r\n        \"processRunParameterValue\": \"app-data-auth-service-api-n101.azurewebsites.net\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688396,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SEMAPHORE_RANDOM_WAIT_MINIMUM\",\r\n        \"processRunParameterValue\": \"30000\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688397,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"FOR_LOOP_PARTITION_LIMIT\",\r\n        \"processRunParameterValue\": \"40\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688398,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_V2_APP_SECRET\",\r\n        \"processRunParameterValue\": \"ctv2-secret\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688399,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TEST_CACHE_VAR\",\r\n        \"processRunParameterValue\": \"1\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688400,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATA_GRANULARITY\",\r\n        \"processRunParameterValue\": \"day\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688401,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"METADATA_API_URI_V2\",\r\n        \"processRunParameterValue\": \"https://api-nonprod.pgcloud.com/othersupportingdata/it/v1/metadata-test/api/v2\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688402,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ETL_METADATA_DATABASE_USER_SECRET\",\r\n        \"processRunParameterValue\": \"metadata-db-user-name\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688403,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATA_PROVIDER_KEY\",\r\n        \"processRunParameterValue\": \"1213\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688404,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"OPERATION_TENANT_ID\",\r\n        \"processRunParameterValue\": \"pg-tenant-id\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688405,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SURROGATE_DYNAMIC_API_URI\",\r\n        \"processRunParameterValue\": \"/skidservice/skidAssignmentProcess/localObjectTypeKey/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688406,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TURBINE_API_CLIENT_ID\",\r\n        \"processRunParameterValue\": \"turbine-api-client-id\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688407,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_V2_RESOURCE_ID\",\r\n        \"processRunParameterValue\": \"ca272605-0cc2-498e-9bdf-d36af2fc06a8\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688408,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PROCESS_KEY\",\r\n        \"processRunParameterValue\": \"158300\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688409,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"NEW_SKID_TABLE\",\r\n        \"processRunParameterValue\": \"new_skid_lkp\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688410,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ENABLE_SKID_CACHE\",\r\n        \"processRunParameterValue\": \"true\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688411,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_CONNECTION_STRING_SECRET\",\r\n        \"processRunParameterValue\": \"event-hub-connection-string\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688412,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_API_SERVER\",\r\n        \"processRunParameterValue\": \"apim-nonprod.pgcloud.com\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688413,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_NAME\",\r\n        \"processRunParameterValue\": \"turbine-spark-app-logs-test\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688414,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_V2_APP_ID\",\r\n        \"processRunParameterValue\": \"ca272605-0cc2-498e-9bdf-d36af2fc06a8\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688415,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_CODEGENERATOR_USER\",\r\n        \"processRunParameterValue\": \"airflow\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688416,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_API_SERVER\",\r\n        \"processRunParameterValue\": \"apim-nonprod.pgcloud.com\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688417,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SURROGATE_API_SERVER\",\r\n        \"processRunParameterValue\": \"mdm-n101.eastus2.cloudapp.azure.com\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688418,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATABRICKS_TOKEN_SECRET\",\r\n        \"processRunParameterValue\": \"databricks-token\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688419,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ROOT_PROCESS_RUN_KEY\",\r\n        \"processRunParameterValue\": \"24181761\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688420,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"KEY_VAULT_NAME\",\r\n        \"processRunParameterValue\": \"kv-tpd-orch-n301\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688421,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PARENT_PROCESS_RUN_KEY\",\r\n        \"processRunParameterValue\": \"\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688423,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ELASTIC_SPARK_URL_SECRET\",\r\n        \"processRunParameterValue\": \"elastic-spark-url\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688424,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_TENANT_ID\",\r\n        \"processRunParameterValue\": \"ds-client-tenant-id\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688425,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_DQE_V2_APP_ID\",\r\n        \"processRunParameterValue\": \"ca272605-0cc2-498e-9bdf-d36af2fc06a8\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688426,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKIDV2_BATCH_SIZE\",\r\n        \"processRunParameterValue\": \"50000\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688427,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PROCESS_TIMEOUT\",\r\n        \"processRunParameterValue\": \"mdm_integration_lib_bf\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688428,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_APP_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"pct-application-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688429,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_CLIENT_ID\",\r\n        \"processRunParameterValue\": \"ds-client-id\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688430,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"MATERIALIZE_PATH\",\r\n        \"processRunParameterValue\": \"dbfs:/mnt/adls/Spark/data/temp/materialize/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688431,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKIDV2_TYPE_THRESHOLD\",\r\n        \"processRunParameterValue\": \"1000000\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688432,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_CODEGENERATOR_ADDRESS\",\r\n        \"processRunParameterValue\": \"amqps://eventhub-lm-n201.servicebus.windows.net/turbine-code-generator\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688433,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ETL_METADATA_SERVER_NAME\",\r\n        \"processRunParameterValue\": \"sqlserver-metadatav2-n201.database.windows.net\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688434,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SCRIPTS_PATH\",\r\n        \"processRunParameterValue\": \"scripts/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688435,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"RLS_CODE_API_URI\",\r\n        \"processRunParameterValue\": \"/api/v1/permissions/attributes\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688436,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SCD_MINUS_INFTY_DATE\",\r\n        \"processRunParameterValue\": \"1900-01-01 00:00:00\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688437,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATABRICKS_DOMAIN\",\r\n        \"processRunParameterValue\": \"eastus2.azuredatabricks.net\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688438,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_APP_ID\",\r\n        \"processRunParameterValue\": \"e8ba7e34-b5b8-4a50-b2a0-add9e0e0d70d\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688439,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SURROGATE_DYNAMIC_API_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"surrogate-dynamic-api-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688440,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DQ_MODULE_REPORT_PATH\",\r\n        \"processRunParameterValue\": \"turbinev1/DQ\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688441,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PROCESS_RUN_KEY\",\r\n        \"processRunParameterValue\": \"24181761\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688442,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATABRICKS_SPARK_VERSION\",\r\n        \"processRunParameterValue\": \"6.4.x-scala2.11\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688443,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SURROGATE_DYNAMIC_API_SERVER\",\r\n        \"processRunParameterValue\": \"mdm-n101.eastus2.cloudapp.azure.com\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688444,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ELASTIC_CLUSTERLOG_URL_SECRET\",\r\n        \"processRunParameterValue\": \"elastic-clusterlogs-url\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688445,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"LOGGING_LEVEL\",\r\n        \"processRunParameterValue\": \"INFO\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688446,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"NEW_SKID_PATH\",\r\n        \"processRunParameterValue\": \"/mnt/adls/skid_cache/new_skid_lkp\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688447,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_V2_API_SERVER\",\r\n        \"processRunParameterValue\": \"dqeapi-n301.pg.com\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688448,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SEMAPHORE_API_URL\",\r\n        \"processRunParameterValue\": \"https://api-nonprod.pgcloud.com/othersupportingdata/it/v1/metadata-test/api/v1/semaphore\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688449,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATASETS_PHYSICAL_PAGE_SIZE\",\r\n        \"processRunParameterValue\": \"200\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688450,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_ADDRESS\",\r\n        \"processRunParameterValue\": \"amqps://eventhub-lm-dbricks-n201.servicebus.windows.net/turbine-spark-app-logs-test\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688451,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"GRAPH_KEY\",\r\n        \"processRunParameterValue\": \"158135\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688452,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"MDM_EXTERNAL_STORAGE_CONFIG_ID\",\r\n        \"processRunParameterValue\": \"turbine_test_mdmp_integration\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688453,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"RELOAD_TYPE\",\r\n        \"processRunParameterValue\": \"\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688454,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SCRIPTS_FILESYSTEM\",\r\n        \"processRunParameterValue\": \"scripts\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688455,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"MDM_PULL_CONFIGURATION_ID\",\r\n        \"processRunParameterValue\": \"mdm_integration_lib_turbine_test\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688456,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATABRICKS_CLUSTER_ID\",\r\n        \"processRunParameterValue\": \"0723-091307-140b8ct2\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688457,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_API_URI\",\r\n        \"processRunParameterValue\": \"/othersupportingdata/it/pct-meta/v1/controlTotals/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688458,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"APP_INSIGHTS_CONNECTION_STRING_SECRET_SCOPE\",\r\n        \"processRunParameterValue\": \"common2\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688459,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_OCP_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"pct-Ocp-Apim-Subscription-Key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688460,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"LIBRARY_PATH\",\r\n        \"processRunParameterValue\": \"dbfs:/mnt/scripts/lib\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688461,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"KEYVAULT_NAME\",\r\n        \"processRunParameterValue\": \"https://kv-tpd-orch-n301.vault.azure.net/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688462,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_OCP_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"ds-ocp-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688463,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_USER\",\r\n        \"processRunParameterValue\": \"SparkAppLogs\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688464,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_API_URI\",\r\n        \"processRunParameterValue\": \"/othersupportingdata/it/v1/dimcoverage/dimensionCoverages\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688465,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"event-hub-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688466,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"KEY_VAULT_URL\",\r\n        \"processRunParameterValue\": \"https://kv-tpd-orch-n301.vault.azure.net/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688467,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"APP_INSIGHTS_CONNECTION_STRING_SECRET2\",\r\n        \"processRunParameterValue\": \"app-insights-connection-string\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688468,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SOURCE_PATH\",\r\n        \"processRunParameterValue\": \"/mnt/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688469,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKID_CACHE_PATH\",\r\n        \"processRunParameterValue\": \"/mnt/adls/skid_cache/cache_lkp\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688470,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TARGET_PATH\",\r\n        \"processRunParameterValue\": \"/mnt/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688471,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ETL_METADATA_DATABASE_NAME\",\r\n        \"processRunParameterValue\": \"sqldb-metadatav2-n201\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688472,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"MILESTONE_PATH\",\r\n        \"processRunParameterValue\": \"dbfs:/mnt/adls/Spark/data/temp/milestone/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688473,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TEMPORARY_PATH\",\r\n        \"processRunParameterValue\": \"dbfs:/mnt/adls/Spark/data/temp/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688474,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TRACE_ROW_NUMBER\",\r\n        \"processRunParameterValue\": \"50\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688475,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKIDV2_MATERIALIZE_PATH\",\r\n        \"processRunParameterValue\": \"abfss://turbinev1@antpdxe5c58c52.dfs.core.windows.net/Spark/data/temp/skid_materialization/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688476,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"APPLICATION_STORAGE_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"app-storage-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688477,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ORCHESTRATOR_QUEUE\",\r\n        \"processRunParameterValue\": \"TEST_ORCHESTRATOR\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688478,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKIDV2_LOCATION_PATH\",\r\n        \"processRunParameterValue\": \"abfss://turbinev1@antpdxe5c58c52.dfs.core.windows.net/Spark/data/temp/skid_location/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688479,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PROCESS_NAME\",\r\n        \"processRunParameterValue\": \" BUG125550_TEST_GRAPH1\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688480,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"AZURE_STORAGE_ACCOUNT_NAME\",\r\n        \"processRunParameterValue\": \"fs.azure.account.key.dpposx637011d3.dfs.core.windows.net\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688481,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"BATCH_PROCESS_RUN_KEY\",\r\n        \"processRunParameterValue\": \"\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688482,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_TENANT_ID\",\r\n        \"processRunParameterValue\": \"3596192b-fdf5-4e2c-a6fa-acb706c963d8\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688483,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DATABRICKS_CLUSTER_POOL_ID\",\r\n        \"processRunParameterValue\": \"0310-151947-taffy17-pool-a5ujhJLR\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688485,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SURROGATE_API_URI\",\r\n        \"processRunParameterValue\": \"/skidservice/skidAssignmentProcess/sharedObjectTypeKey/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688486,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ORCHESTRATOR_SCHED\",\r\n        \"processRunParameterValue\": \"TEST_ORCHESTRATOR\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688487,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SEMAPHORE_RANDOM_WAIT_MAXIMUM\",\r\n        \"processRunParameterValue\": \"60000\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688488,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"MDM_CONFIGURATION_ID\",\r\n        \"processRunParameterValue\": \"mdm_integration_lib_dev\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688489,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ELASTIC_AIRFLOW_URL_SECRET\",\r\n        \"processRunParameterValue\": \"elastic-airflow-url\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688490,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"APPLICATION_STORAGE_NAME\",\r\n        \"processRunParameterValue\": \"antpdxe5c58c52\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688491,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_DQE_V2_APP_SECRET\",\r\n        \"processRunParameterValue\": \"ctv2-secret\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688492,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"ETL_METADATA_DATABASE_PASSWORD_SECRET\",\r\n        \"processRunParameterValue\": \"metadata-db-user-password\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688493,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PARTITION_BATCH_SIZE \",\r\n        \"processRunParameterValue\": \"5\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688494,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"CONTROL_TOTALS_DQE_V2_API_URI\",\r\n        \"processRunParameterValue\": \"/qos/api/v1/sot/controltotalresult/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688495,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SKIDV2_API_URL\",\r\n        \"processRunParameterValue\": \"https://mdm-n101.eastus2.cloudapp.azure.com/skidservice\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688496,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"EVENT_HUB_CODEGENERATOR_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"event-hub-codegenerator-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688497,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SCD_PLUS_INFTY_DATE\",\r\n        \"processRunParameterValue\": \"9999-12-31 23:59:59.999\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688498,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SEMAPHORE_RETRIES\",\r\n        \"processRunParameterValue\": \"1000\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688499,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"METADATA_API_URI\",\r\n        \"processRunParameterValue\": \"https://api-nonprod.pgcloud.com/othersupportingdata/it/v1/metadata-test/api/v1\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688500,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"SURROGATE_API_KEY_SECRET\",\r\n        \"processRunParameterValue\": \"surrogate-api-key\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688501,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"OPERATION_CLIENT_ID\",\r\n        \"processRunParameterValue\": \"service-principal-client-id\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688502,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"PRIORITY_PARAMETER\",\r\n        \"processRunParameterValue\": \"mdm_integration_lib_bf\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688503,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"DS_RESOURCE\",\r\n        \"processRunParameterValue\": \"https://management.core.windows.net/\"\r\n    },\r\n    {\r\n        \"processRunParameterKey\": 43688504,\r\n        \"processRunKey\": 24181761,\r\n        \"processRunParameterType\": \"VARIABLE\",\r\n        \"processRunParameterName\": \"TEMPLATE_KEY\",\r\n        \"processRunParameterValue\": \"\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/runParameters/24181761/initialize",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"runParameters",
+								"24181761",
+								"initialize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/schedules",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"applKey\": 21,\r\n  \"scheduleItemList\": [\r\n    {\r\n      \"crontabExpressionText\": \"0 4 0 27 2 ? 2023\",\r\n      \"seqNum\": 1\r\n    }\r\n  ],\r\n  \"scheduleName\": \"At 12:04 AM, on day 27 of the month, only in February, only in 2023\",\r\n  \"triggerIfObjectsReceiveInd\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/schedules",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/schedules/process-run",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"applicationKey\": 21,\r\n  \"processKey\": 158300,\r\n  \"processRunKey\": 24181761,\r\n  \"scheduleKey\": 85\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/schedules/process-run",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"schedules",
+								"process-run"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publish",
+			"item": [
+				{
+					"name": "api/v1/repo/publish",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"errors\": null,\r\n    \"changes\": {\r\n        \"create\": {\r\n            \"onboarding\": [\r\n                \"test\",\r\n                \"POS Onboarding Test\"\r\n            ],\r\n            \"config\": [\r\n                \"test/new/POS_Graph/test\"\r\n            ],\r\n            \"logical\": [\r\n                \"MC-CDS-MC-3811-FACT-POSDY\"\r\n            ],\r\n            \"graph\": [\r\n                \"CDL-PointOfSale-02-NF1-DIV-DELETE-POS-V1.0\",\r\n                \"POS Graph Turbine Test\",\r\n                \"tet\",\r\n                \"tet2\"\r\n            ]\r\n        }\r\n    },\r\n    \"exists\": true,\r\n    \"created\": \"2023-02-06T10:52:04.8938646\",\r\n    \"readyToComplete\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/publish?area=test&project=new&workspace=kc\n",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"publish"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "kc\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/publish",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/publish/accept?area=test&project=new&workspace=POS_Graph",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"publish",
+								"accept"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "new"
+								},
+								{
+									"key": "workspace",
+									"value": "POS_Graph"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Semaphore",
+			"item": [
+				{
+					"name": "/api/v1/semaphore",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/semaphore?processRunKey=10&resourcePath=X2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"semaphore"
+							],
+							"query": [
+								{
+									"key": "processRunKey",
+									"value": "10"
+								},
+								{
+									"key": "resourcePath",
+									"value": "X2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/semaphore",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"concurrentProcessLimit\": 2,\r\n  \"processRunKey\": 10,\r\n  \"requestedTimespan\": 12000,\r\n  \"resourcePath\": \"X2\",\r\n  \"resourcePathPattern\": \"X/%\",\r\n  \"semaphoreType\": \"EXCLUSIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/semaphore",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"semaphore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/semaphore/release",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"processRunKey\": 10,\r\n  \"resourcePath\": \"X2\",\r\n  \"resourcePathPattern\": \"X/%\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/semaphore/release",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"semaphore",
+								"release"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/semaphore/renew",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"processRunKey\": 10,\r\n  \"requestedTimespan\": 12000,\r\n  \"resourcePath\": \"X2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/semaphore/renew",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"semaphore",
+								"renew"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Branch",
+			"item": [
+				{
+					"name": "/api/v1/repo/graph",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/graph?perPage=50&page=0&area=test&project=manual_tests&workspace=Test1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"graph"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "50"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "manual_tests"
+								},
+								{
+									"key": "workspace",
+									"value": "Test1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/repo/branch/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status: 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{dynamic_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/repo/branch/delete?area=test&project=manual_tests&workspace=Test1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"repo",
+								"branch",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "test"
+								},
+								{
+									"key": "project",
+									"value": "manual_tests"
+								},
+								{
+									"key": "workspace",
+									"value": "Test1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{dynamic_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "{{baseUrl}}"
+		}
+	]
+}

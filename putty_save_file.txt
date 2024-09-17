@@ -1,0 +1,6 @@
+127.0.0.1 sqlserver-coreutil-turbine.database.windows.net #prod                                                                
+127.0.0.1 sqlserver-metadatav2-n301.database.windows.net #breakfix
+127.0.0.1 sqlserver-metadatav2-n201.database.windows.net #test
+127.0.0.1 app-cdl-semaphore-api-db-server-p101.database.windows.net #PROD
+127.0.0.1 app-cdl-semaphore-api-db-server-n301.database.windows.net #BF
+127.0.0.1 app-cdl-semaphore-api-db-server-n201.database.windows.net #TESTQA

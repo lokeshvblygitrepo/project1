@@ -1,0 +1,10 @@
+install -Package Micorsoft.TypeScript.MSbuild
+
+
+benech mark  and the parameters to measure the performance.
+UI and 
+sample pipelines
+performance indicators
+benchmark parameters
+test scenarios to be targeted test cases
+15 test scenarios targeting.
